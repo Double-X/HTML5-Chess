@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Chinese Chess</title>
+
+        <!-- All css files must be loaded before loading any js files -->
+        <link rel="stylesheet" href="css/abstractChess/chessboard.css">
+        <link rel="stylesheet" href="css/chineseChess/button.css">
+        <link rel="stylesheet" href="css/chineseChess/td.css">
+        <!-- -->
+
+        <!-- containers.js must be placed above all the other js files -->
+        <script type="text/javascript" src="js/containers.js"></script>
+        <!-- -->
+        <!-- api.js must be placed above all the other js files except containers.js -->
+        <script type="text/javascript" src="js/api.js"></script>
+        <!-- -->
+        <!-- unitTestSwitches.js must be placed below containers.js but above all unit test js files -->
+        <script type="text/javascript" src="js/unitTestSuiteRunner.js"></script>
+        <!-- -->
+        <!-- unitTestSwitches.js must be placed below containers.js but above all unit test js files -->
+        <script type="text/javascript" src="js/unitTestSwitches.js"></script>
+        <!-- -->
+        <!-- pluginLoader.js must be placed below containers.js but above any plugins.js -->
+        <script type="text/javascript" src="js/pluginLoader.js"></script>
+        <!-- -->
+        <!-- pluginSetupCodeRunner.js must be placed below containers.js but above any plugins.js -->
+        <script type="text/javascript" src="js/pluginSetupCodeRunner.js"></script>
+        <!-- -->
+        <!-- integrationTestSuiteRunner.js must be placed below containers.js but above any integrationTests.js -->
+        <script type="text/javascript" src="js/integrationTestSuiteRunner.js"></script>
+        <!-- -->
+        <!-- Library js files, if any, must be placed above Abstract Chess ones -->
+        <!-- -->
+        <!-- Abstract Chess js files, except plugins.js, must be placed above concrete ones -->
+        <script type="text/javascript" src="js/abstractChess/blockable.js"></script>
+        <script type="text/javascript" src="js/abstractChess/checkable.js"></script>
+        <script type="text/javascript" src="js/abstractChess/coordinates.js"></script>
+        <script type="text/javascript" src="js/abstractChess/currentSide.js"></script>
+        <script type="text/javascript" src="js/abstractChess/dom.js"></script>
+        <script type="text/javascript" src="js/abstractChess/highlightable.js"></script>
+        <script type="text/javascript" src="js/abstractChess/messageLog.js"></script>
+        <script type="text/javascript" src="js/abstractChess/movable.js"></script>
+        <script type="text/javascript" src="js/abstractChess/movableAbilities.js"></script>
+        <script type="text/javascript" src="js/abstractChess/movableRules.js"></script>
+        <script type="text/javascript" src="js/abstractChess/selectable.js"></script>
+        <script type="text/javascript" src="js/abstractChess/space.js"></script>
+        <script type="text/javascript" src="js/abstractChess/plugins/plugins.js"></script>
+        <!-- -->
+        <!-- Concrete Chess js files, must be placed below the abstract ones, except plugins.js -->
+        <script type="text/javascript" src="js/chineseChess/blockable.js"></script>
+        <script type="text/javascript" src="js/chineseChess/checkable.js"></script>
+        <script type="text/javascript" src="js/chineseChess/currentSide.js"></script>
+        <script type="text/javascript" src="js/chineseChess/movableAbilities.js"></script>
+        <script type="text/javascript" src="js/chineseChess/space.js"></script>
+        <script type="text/javascript" src="js/chineseChess/plugins/plugins.js"></script>
+        <!-- -->
+        <!-- Abstract Chess Unit Tests js files must be placed below Concrete Chess js files, except plugins.js -->
+        <script type="text/javascript" src="js/abstractChess/unitTests/blockable.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/checkable.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/coordinates.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/currentSide.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/dom.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/highlightable.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/messageLog.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/movable.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/movableAbilities.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/movableRules.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/selectable.js"></script>
+        <script type="text/javascript" src="js/abstractChess/unitTests/space.js"></script>
+        <!-- -->
+        <!-- Concrete Chess Unit Test js files, must be placed below abstract ones -->
+        <script type="text/javascript" src="js/chineseChess/unitTests/blockable.js"></script>
+        <script type="text/javascript" src="js/chineseChess/unitTests/movableAbilities.js"></script>
+        <!-- -->
+
+    </head>
+
+    <body contenteditable="true">
+
+        <div id="currentSideDiv" align="center">
+            <text id="currentSideDesc" contenteditable=false>Current side:</text>
+            <text id="currentSide" contenteditable=false>Red</text>
+        </div>
+        
+        <br>
+
+        <div class="container" id="chessboardPlacer">
+            
+            <div class="left" id="chessboardLeftPlacer">
+                <center id="chessboardLeftCenterPlacer">　</center>
+            </div>
+
+            <div class="center" id="chessboardCenterPlacer">
+                <center id="chessboardCenterCenterPlacer">
+                    <table id="chessboard" style="display: inline-block; background-color: rgb(255, 191, 0); text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td class="red"><button class="red" id="Red_Chariot_1" value="{&quot;x&quot;:1,&quot;y&quot;:1}" onclick="chess.selectable.api.toggle('Red_Chariot_1');" contenteditable=false><b>俥</b></button></td>
+                                <td class="red"><button class="red" id="Red_Horse_1" value="{&quot;x&quot;:2,&quot;y&quot;:1}" onclick="chess.selectable.api.toggle('Red_Horse_1');" contenteditable=false><b>傌</b></button></td>
+                                <td class="red"><button class="red" id="Red_Elephant_1" value="{&quot;x&quot;:3,&quot;y&quot;:1}" onclick="chess.selectable.api.toggle('Red_Elephant_1');" contenteditable=false><b>相</b></button></td>
+                                <td class="red"><button class="red" id="Red_Advisor_1" value="{&quot;x&quot;:4,&quot;y&quot;:1}" onclick="chess.selectable.api.toggle('Red_Advisor_1');" contenteditable=false><b>仕</b></button></td>
+                                <td class="red"><button class="red" id="Red_General" value="{&quot;x&quot;:5,&quot;y&quot;:1}" onclick="chess.selectable.api.toggle('Red_General');" contenteditable=false><b>帥</b></button></td>
+                                <td class="red"><button class="red" id="Red_Advisor_2" value="{&quot;x&quot;:6,&quot;y&quot;:1}" onclick="chess.selectable.api.toggle('Red_Advisor_2');" contenteditable=false><b>仕</b></button></td>
+                                <td class="red"><button class="red" id="Red_Elephant_2" value="{&quot;x&quot;:7,&quot;y&quot;:1}" onclick="chess.selectable.api.toggle('Red_Elephant_2');" contenteditable=false><b>相</b></button></td>
+                                <td class="red"><button class="red" id="Red_Horse_2" value="{&quot;x&quot;:8,&quot;y&quot;:1}" onclick="chess.selectable.api.toggle('Red_Horse_2');" contenteditable=false><b>傌</b></button></td>
+                                <td class="red"><button class="red" id="Red_Chariot_2" value="{&quot;x&quot;:9,&quot;y&quot;:1}" onclick="chess.selectable.api.toggle('Red_Chariot_2');" contenteditable=false><b>俥</b></button></td>
+                            </tr>
+                            <tr>
+                                <td class="red"><button class="neutral" id="Neutral_Space_1" value="{&quot;x&quot;:1,&quot;y&quot;:2}" onclick="chess.selectable.api.toggle('Neutral_Space_1');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_2" value="{&quot;x&quot;:2,&quot;y&quot;:2}" onclick="chess.selectable.api.toggle('Neutral_Space_2');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_3" value="{&quot;x&quot;:3,&quot;y&quot;:2}" onclick="chess.selectable.api.toggle('Neutral_Space_3');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_4" value="{&quot;x&quot;:4,&quot;y&quot;:2}" onclick="chess.selectable.api.toggle('Neutral_Space_4');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_5" value="{&quot;x&quot;:5,&quot;y&quot;:2}" onclick="chess.selectable.api.toggle('Neutral_Space_5');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_6" value="{&quot;x&quot;:6,&quot;y&quot;:2}" onclick="chess.selectable.api.toggle('Neutral_Space_6');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_7" value="{&quot;x&quot;:7,&quot;y&quot;:2}" onclick="chess.selectable.api.toggle('Neutral_Space_7');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_8" value="{&quot;x&quot;:8,&quot;y&quot;:2}" onclick="chess.selectable.api.toggle('Neutral_Space_8');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_9" value="{&quot;x&quot;:9,&quot;y&quot;:2}" onclick="chess.selectable.api.toggle('Neutral_Space_9');" contenteditable=false>　</button></td>
+                            </tr>
+                            <tr>
+                                <td class="red"><button class="neutral" id="Neutral_Space_10" value="{&quot;x&quot;:1,&quot;y&quot;:3}" onclick="chess.selectable.api.toggle('Neutral_Space_10');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="red" id="Red_Cannon_1" value="{&quot;x&quot;:2,&quot;y&quot;:3}" onclick="chess.selectable.api.toggle('Red_Cannon_1');" contenteditable=false><b>炮</b></button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_11" value="{&quot;x&quot;:3,&quot;y&quot;:3}" onclick="chess.selectable.api.toggle('Neutral_Space_11');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_12" value="{&quot;x&quot;:4,&quot;y&quot;:3}" onclick="chess.selectable.api.toggle('Neutral_Space_12');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_13" value="{&quot;x&quot;:5,&quot;y&quot;:3}" onclick="chess.selectable.api.toggle('Neutral_Space_13');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_14" value="{&quot;x&quot;:6,&quot;y&quot;:3}" onclick="chess.selectable.api.toggle('Neutral_Space_14');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_15" value="{&quot;x&quot;:7,&quot;y&quot;:3}" onclick="chess.selectable.api.toggle('Neutral_Space_15');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="red" id="Red_Cannon_2" value="{&quot;x&quot;:8,&quot;y&quot;:3}" onclick="chess.selectable.api.toggle('Red_Cannon_2');" contenteditable=false><b>炮</b></button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_16" value="{&quot;x&quot;:9,&quot;y&quot;:3}" onclick="chess.selectable.api.toggle('Neutral_Space_16');" contenteditable=false>　</button></td>
+                            </tr>
+                            <tr>
+                                <td class="red"><button class="red" id="Red_Soldier_1" value="{&quot;x&quot;:1,&quot;y&quot;:4}" onclick="chess.selectable.api.toggle('Red_Soldier_1');" contenteditable=false><b>兵</b></button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_17" value="{&quot;x&quot;:2,&quot;y&quot;:4}" onclick="chess.selectable.api.toggle('Neutral_Space_17');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="red" id="Red_Soldier_2" value="{&quot;x&quot;:3,&quot;y&quot;:4}" onclick="chess.selectable.api.toggle('Red_Soldier_2');" contenteditable=false><b>兵</b></button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_18" value="{&quot;x&quot;:4,&quot;y&quot;:4}" onclick="chess.selectable.api.toggle('Neutral_Space_18');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="red" id="Red_Soldier_3" value="{&quot;x&quot;:5,&quot;y&quot;:4}" onclick="chess.selectable.api.toggle('Red_Soldier_3');" contenteditable=false><b>兵</b></button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_19" value="{&quot;x&quot;:6,&quot;y&quot;:4}" onclick="chess.selectable.api.toggle('Neutral_Space_19');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="red" id="Red_Soldier_4" value="{&quot;x&quot;:7,&quot;y&quot;:4}" onclick="chess.selectable.api.toggle('Red_Soldier_4');" contenteditable=false><b>兵</b></button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_20" value="{&quot;x&quot;:8,&quot;y&quot;:4}" onclick="chess.selectable.api.toggle('Neutral_Space_20');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="red" id="Red_Soldier_5" value="{&quot;x&quot;:9,&quot;y&quot;:4}" onclick="chess.selectable.api.toggle('Red_Soldier_5');" contenteditable=false><b>兵</b></button></td>
+                            </tr>
+                            <tr>
+                                <td class="red"><button class="neutral" id="Neutral_Space_21" value="{&quot;x&quot;:1,&quot;y&quot;:5}" onclick="chess.selectable.api.toggle('Neutral_Space_21');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_22" value="{&quot;x&quot;:2,&quot;y&quot;:5}" onclick="chess.selectable.api.toggle('Neutral_Space_22');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_23" value="{&quot;x&quot;:3,&quot;y&quot;:5}" onclick="chess.selectable.api.toggle('Neutral_Space_23');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_24" value="{&quot;x&quot;:4,&quot;y&quot;:5}" onclick="chess.selectable.api.toggle('Neutral_Space_24');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_25" value="{&quot;x&quot;:5,&quot;y&quot;:5}" onclick="chess.selectable.api.toggle('Neutral_Space_25');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_26" value="{&quot;x&quot;:6,&quot;y&quot;:5}" onclick="chess.selectable.api.toggle('Neutral_Space_26');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_27" value="{&quot;x&quot;:7,&quot;y&quot;:5}" onclick="chess.selectable.api.toggle('Neutral_Space_27');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_28" value="{&quot;x&quot;:8,&quot;y&quot;:5}" onclick="chess.selectable.api.toggle('Neutral_Space_28');" contenteditable=false>　</button></td>
+                                <td class="red"><button class="neutral" id="Neutral_Space_29" value="{&quot;x&quot;:9,&quot;y&quot;:5}" onclick="chess.selectable.api.toggle('Neutral_Space_29');" contenteditable=false>　</button></td>
+                            </tr>
+                            <tr>
+                                <td class="black"><button class="neutral" id="Neutral_Space_30" value="{&quot;x&quot;:1,&quot;y&quot;:6}" onclick="chess.selectable.api.toggle('Neutral_Space_30');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_31" value="{&quot;x&quot;:2,&quot;y&quot;:6}" onclick="chess.selectable.api.toggle('Neutral_Space_31');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_32" value="{&quot;x&quot;:3,&quot;y&quot;:6}" onclick="chess.selectable.api.toggle('Neutral_Space_32');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_33" value="{&quot;x&quot;:4,&quot;y&quot;:6}" onclick="chess.selectable.api.toggle('Neutral_Space_33');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_34" value="{&quot;x&quot;:5,&quot;y&quot;:6}" onclick="chess.selectable.api.toggle('Neutral_Space_34');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_35" value="{&quot;x&quot;:6,&quot;y&quot;:6}" onclick="chess.selectable.api.toggle('Neutral_Space_35');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_36" value="{&quot;x&quot;:7,&quot;y&quot;:6}" onclick="chess.selectable.api.toggle('Neutral_Space_36');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_37" value="{&quot;x&quot;:8,&quot;y&quot;:6}" onclick="chess.selectable.api.toggle('Neutral_Space_37');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_38" value="{&quot;x&quot;:9,&quot;y&quot;:6}" onclick="chess.selectable.api.toggle('Neutral_Space_38');" contenteditable=false>　</button></td>
+                            </tr>
+                            <tr>
+                                <td class="black"><button class="black" id="Black_Soldier_1" value="{&quot;x&quot;:1,&quot;y&quot;:7}" onclick="chess.selectable.api.toggle('Black_Soldier_1');" contenteditable=false><b>卒</b></button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_39" value="{&quot;x&quot;:2,&quot;y&quot;:7}" onclick="chess.selectable.api.toggle('Neutral_Space_39');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="black" id="Black_Soldier_2" value="{&quot;x&quot;:3,&quot;y&quot;:7}" onclick="chess.selectable.api.toggle('Black_Soldier_2');" contenteditable=false><b>卒</b></button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_40" value="{&quot;x&quot;:4,&quot;y&quot;:7}" onclick="chess.selectable.api.toggle('Neutral_Space_40');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="black" id="Black_Soldier_3" value="{&quot;x&quot;:5,&quot;y&quot;:7}" onclick="chess.selectable.api.toggle('Black_Soldier_3');" contenteditable=false><b>卒</b></button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_41" value="{&quot;x&quot;:6,&quot;y&quot;:7}" onclick="chess.selectable.api.toggle('Neutral_Space_41');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="black" id="Black_Soldier_4" value="{&quot;x&quot;:7,&quot;y&quot;:7}" onclick="chess.selectable.api.toggle('Black_Soldier_4');" contenteditable=false><b>卒</b></button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_42" value="{&quot;x&quot;:8,&quot;y&quot;:7}" onclick="chess.selectable.api.toggle('Neutral_Space_42');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="black" id="Black_Soldier_5" value="{&quot;x&quot;:9,&quot;y&quot;:7}" onclick="chess.selectable.api.toggle('Black_Soldier_5');" contenteditable=false><b>卒</b></button></td>
+                            </tr>
+                            <tr>
+                                <td class="black"><button class="neutral" id="Neutral_Space_43" value="{&quot;x&quot;:1,&quot;y&quot;:8}" onclick="chess.selectable.api.toggle('Neutral_Space_43');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="black" id="Black_Cannon_1" value="{&quot;x&quot;:2,&quot;y&quot;:8}" onclick="chess.selectable.api.toggle('Black_Cannon_1');" contenteditable=false><b>砲</b></button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_44" value="{&quot;x&quot;:3,&quot;y&quot;:8}" onclick="chess.selectable.api.toggle('Neutral_Space_44');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_45" value="{&quot;x&quot;:4,&quot;y&quot;:8}" onclick="chess.selectable.api.toggle('Neutral_Space_45');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_46" value="{&quot;x&quot;:5,&quot;y&quot;:8}" onclick="chess.selectable.api.toggle('Neutral_Space_46');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_47" value="{&quot;x&quot;:6,&quot;y&quot;:8}" onclick="chess.selectable.api.toggle('Neutral_Space_47');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_48" value="{&quot;x&quot;:7,&quot;y&quot;:8}" onclick="chess.selectable.api.toggle('Neutral_Space_48');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="black" id="Black_Cannon_2" value="{&quot;x&quot;:8,&quot;y&quot;:8}" onclick="chess.selectable.api.toggle('Black_Cannon_2');" contenteditable=false><b>砲</b></button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_49" value="{&quot;x&quot;:9,&quot;y&quot;:8}" onclick="chess.selectable.api.toggle('Neutral_Space_49');" contenteditable=false>　</button></td>
+                            </tr>
+                            <tr>
+                                <td class="black"><button class="neutral" id="Neutral_Space_50" value="{&quot;x&quot;:1,&quot;y&quot;:9}" onclick="chess.selectable.api.toggle('Neutral_Space_50');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_51" value="{&quot;x&quot;:2,&quot;y&quot;:9}" onclick="chess.selectable.api.toggle('Neutral_Space_51');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_52" value="{&quot;x&quot;:3,&quot;y&quot;:9}" onclick="chess.selectable.api.toggle('Neutral_Space_52');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_53" value="{&quot;x&quot;:4,&quot;y&quot;:9}" onclick="chess.selectable.api.toggle('Neutral_Space_53');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_54" value="{&quot;x&quot;:5,&quot;y&quot;:9}" onclick="chess.selectable.api.toggle('Neutral_Space_54');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_55" value="{&quot;x&quot;:6,&quot;y&quot;:9}" onclick="chess.selectable.api.toggle('Neutral_Space_55');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_56" value="{&quot;x&quot;:7,&quot;y&quot;:9}" onclick="chess.selectable.api.toggle('Neutral_Space_56');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_57" value="{&quot;x&quot;:8,&quot;y&quot;:9}" onclick="chess.selectable.api.toggle('Neutral_Space_57');" contenteditable=false>　</button></td>
+                                <td class="black"><button class="neutral" id="Neutral_Space_58" value="{&quot;x&quot;:9,&quot;y&quot;:9}" onclick="chess.selectable.api.toggle('Neutral_Space_58');" contenteditable=false>　</button></td>
+                            </tr>
+                            <tr>
+                                <td class="black"><button class="black" id="Black_Chariot_1" value="{&quot;x&quot;:1,&quot;y&quot;:10}" onclick="chess.selectable.api.toggle('Black_Chariot_1');" contenteditable=false><b>車</b></button></td>
+                                <td class="black"><button class="black" id="Black_Horse_1" value="{&quot;x&quot;:2,&quot;y&quot;:10}" onclick="chess.selectable.api.toggle('Black_Horse_1');" contenteditable=false><b>馬</b></button></td>
+                                <td class="black"><button class="black" id="Black_Elephant_1" value="{&quot;x&quot;:3,&quot;y&quot;:10}" onclick="chess.selectable.api.toggle('Black_Elephant_1');" contenteditable=false><b>象</b></button></td>
+                                <td class="black"><button class="black" id="Black_Advisor_1" value="{&quot;x&quot;:4,&quot;y&quot;:10}" onclick="chess.selectable.api.toggle('Black_Advisor_1');" contenteditable=false><b>士</b></button></td>
+                                <td class="black"><button class="black" id="Black_General" value="{&quot;x&quot;:5,&quot;y&quot;:10}" onclick="chess.selectable.api.toggle('Black_General');" contenteditable=false><b>將</b></button></td>
+                                <td class="black"><button class="black" id="Black_Advisor_2" value="{&quot;x&quot;:6,&quot;y&quot;:10}" onclick="chess.selectable.api.toggle('Black_Advisor_2');" contenteditable=false><b>士</b></button></td>
+                                <td class="black"><button class="black" id="Black_Elephant_2" value="{&quot;x&quot;:7,&quot;y&quot;:10}" onclick="chess.selectable.api.toggle('Black_Elephant_2');" contenteditable=false><b>象</b></button></td>
+                                <td class="black"><button class="black" id="Black_Horse_2" value="{&quot;x&quot;:8,&quot;y&quot;:10}" onclick="chess.selectable.api.toggle('Black_Horse_2');" contenteditable=false><b>馬</b></button></td>
+                                <td class="black"><button class="black" id="Black_Chariot_2" value="{&quot;x&quot;:9,&quot;y&quot;:10}" onclick="chess.selectable.api.toggle('Black_Chariot_2');" contenteditable=false><b>車</b></button></td>
+                            </tr>
+                            <tr>
+                                <td><button id="backup" value="{&quot;x&quot;:1,&quot;y&quot;:11}"></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </center>
+            </div>
+            
+            <div class="right" id="chessboardRightPlacer">
+                <center id="chessboardRightCenterPlacer">　</center>
+            </div>
+            
+        </div>
+
+        <div>
+            <text id="spaceText">　</text>
+        </div>
+
+    </body>
+
+    <!-- Abstract Chess plugins.js file must be placed below body -->
+    <script type="text/javascript" src="js/abstractChess/plugins.js"></script>
+    <!-- -->
+    <!-- Concrete Chess plugins.js file must be placed below the abstractChess plugin.js -->
+    <script type="text/javascript" src="js/chineseChess/plugins.js"></script>
+    <!-- -->
+    <!-- integrationTest.js file must be placed below all other js files except pluginSetupCodes.js -->
+    <script type="text/javascript" src="js/chineseChess/integrationTests.js"></script>
+    <!-- -->
+    <!-- pluginSetupCodes.js file be placed below all other js files -->
+    <script>
+        // The Abstract counterpart must be loaded first
+        chess.pluginLoader.loadPlugin('pluginSetupCodes', 'js/abstractChess/plugins/');
+        chess.pluginLoader.loadPlugin('pluginSetupCodes', 'js/chineseChess/plugins/');
+        //
+    </script>
+    <!-- -->
+
+</html>
