@@ -1,0 +1,15 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+Library files are similar to plugin files, except that:
+1. Plugins depend on the core modules, which depend on libraries, if any
+2. Plugins are part of this project while libraries are externally reusable files used by this project
+3. Plugins are loaded via pluginLoader.js while libraries are loaded by the HTML files directly
+
+While this project doesn't need any library to work, core module developers are free to:
+1. Use any external library for any core module development, as long as all its terms of use are conformed and all
+   credits are provided in credits.txt(unless it violates any of the former)
+2. Extract any core module functionality that are reusable outside this project into libraries

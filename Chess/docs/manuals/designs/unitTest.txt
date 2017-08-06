@@ -1,0 +1,38 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+Unit test suites can be implemented this way:
+1. For each function to be unit-tested, extend them with unit-test codes(or, sometimes, functional ones)
+   Functional tests are only for functions whose sole purpose's to call apis of other core modules/plugins
+2. Unit test codes and implementation codes should be placed on the unit test and implementation modules
+   respectively, so reading the unit tests won't be distracted by the implementation details
+   After all, a unit test should test a function's external behavior rather than internal implementations
+3. Each unit test suite should have a switch to activate and deactivate the unit test suite on the fly
+4. Unit tests are supposed to be run when the application actually runs as well as separately
+5. Note that running unit tests while running the application can quickly slow down the application drastically
+
+Functions belonging to at least 1 of the following types won't be unit tested:
+1. Control flow/managerial functions doing no real work by themselves
+2. Those being ridiculously costly, difficult and unrewarding to come up with non-tautological unit tests
+   Unit tests replicating the contents of the functions to be tested are tautological(exceptions must be explained)
+   Unit tests replicating the contents of other functions may or may not be tautological(use case by case analysis)
+3. Those needing fake doms to have nontrivial unit tests
+4. Those covered by functional tests
+5. Overcomplicated ones(they'll be refactored before being unit tested/covered by functional tests)
+
+To summerize, a unit test should focus on a function's external behaviors rather than internal implemenetations.
+In other words, in general, the closer to be a black box testing, the more desirable the unit test is.
+
+The unit test suites can be run during the normal application running or separately.
+It's done by having a hook object inside each unit test suite to store all unit test codes.
+So those unit test codes can be run when running the codes to be tested, or separately, like via script calls.
+Therefore, those unit test code should be able to be run under any circumstance in order to be run separately.
+Hence those not being able to run under any valid circumstance should be elaborately documented for this.
+It also means that all unit test codes should be either no-op or referentially transparent to ensure independence.
+Nevertheless, it's acceptable for some testing codes to be only idempotent, as long as these are well-documented.
+
+Some unit test codes can't be run without running the codes to be tested though.
+For instance, those testing for side effects that can't be nicely rolled back are troublesome to be run separately.

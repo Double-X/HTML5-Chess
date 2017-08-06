@@ -1,0 +1,59 @@
+Written by: DoubleX
+Written on: GMT 1000 30 Dec 2016
+Version: v1.0
+
+===================================================================================================================
+
+Description
+
+A Chinese Chess plugin that records the piece movement for both sides
+
+===================================================================================================================
+
+Features
+
+1. You can configure whether the starting and ending time of the current turn will be recorded along with the piece
+   movement at that turn as well
+   This feature needs the Abstract Chess plugin 'timer'
+2. You can activate and deactivate this plugin on the fly
+
+===================================================================================================================
+
+Installation
+
+To install this plugin, simply unzip this rar on the Chess(root) folder.
+Only the unit test module and the docs are optional, all the others are mandatory in order for the plugin to work
+
+===================================================================================================================
+
+License
+
+Same as that of this project
+
+===================================================================================================================
+
+Links
+
+Same as those of this project
+
+===================================================================================================================
+
+Plugin Dependencies
+
+None for basic functionality
+Abstract Chess plugin 'timer' for the 1st feature
+
+===================================================================================================================
+
+Proficiency Requirements
+
+Plugin developers - Same as that of this project
+
+Plugin users - Nothing special
+
+===================================================================================================================
+
+Unit Test Coverages
+
+Number of functions: 39
+Number of unit tests: 8

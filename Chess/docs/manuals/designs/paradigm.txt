@@ -1,0 +1,18 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+This project uses neither the procedural, prototype-based, object-oriented, nor functional paradigm.
+In fact, I don't even know what paradigm(s) I'm using, or whether this project even has a paradigm at all.
+However, the key directions of the design of this project are the following:
+1. Makes every function unit testable by having many seams around them, thanks to the dynamic nature of Javascript
+2. Makes every function extensible by keeping them highly cohesive and loosely coupled from each other
+3. Makes many functions referentially transparent or at least idempotent to make reasoning easy, simple and small
+4. Separates the APIs from implementations thus making changing modules easy, simple and small
+5. Makes every module to declares all the needed APIs as dependencies that can be replaced by mocks and stubs
+
+Note that making the codebase to be easy, simple and small to have drastic changes isn't a key direction, as the 
+scope of this project - Chess and Chinese Chess, are extremely unlikely to have any drastic change in the near 
+future, therefore the codebase should actually be quite future-proof already

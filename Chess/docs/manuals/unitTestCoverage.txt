@@ -1,0 +1,106 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+coordinates
+
+Number of functions: 4
+Number of unit tested functions: 3
+
+===================================================================================================================
+
+dom
+
+Number of functions: 7
+Number of unit tested functions: 6
+
+===================================================================================================================
+
+highlightable
+
+Number of functions: 3
+Number of unit tested functions: 0
+
+===================================================================================================================
+
+messageLog
+
+Number of functions: 4
+Number of unit tested functions: 2
+
+===================================================================================================================
+
+movableRules
+
+Number of functions: 3
+Number of unit tested functions: 0
+
+===================================================================================================================
+
+blockable
+
+Number of functions: 30
+Number of unit tested functions: 8
+
+===================================================================================================================
+
+checkable
+
+Number of functions: 24
+Number of unit tested functions: 2
+
+===================================================================================================================
+
+currentSide
+
+Number of functions: 8
+Number of unit tested functions: 1
+
+===================================================================================================================
+
+movable
+
+Number of functions: 7
+Number of unit tested functions: 4
+
+===================================================================================================================
+
+movableAbilities
+
+Number of functions: 53
+Number of unit tested functions: 18
+
+===================================================================================================================
+
+promotable
+
+Number of functions: 9
+Number of unit tested functions: 0
+
+===================================================================================================================
+
+selectable
+
+Number of functions: 10
+Number of unit tested functions: 0
+
+===================================================================================================================
+
+space
+
+Number of functions: 3
+Number of unit tested functions: 0
+
+===================================================================================================================
+
+specialMoveRecords
+
+Number of functions: 19
+Number of unit tested functions: 0
+
+===================================================================================================================
+
+Total number of functions: 184
+Total number of unit tested functions: 42

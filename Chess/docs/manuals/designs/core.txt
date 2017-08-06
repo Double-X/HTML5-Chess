@@ -1,0 +1,15 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+Each core module's designed to implement the necessary behaviors, that's why most of them are named by abilities.
+
+The core modules(those in folder abstractChess, chess, chineseChess) only implements the essential functionalities,
+and all the optional ones are implemented by plugins that can be activated/deactivated ob the fly.
+
+This approach keeps the codebase easy, simple and small for both the core module developers and plugin developers.
+To achieve this, each function in the core modules are designed as hooks that can be extended by plugins.
+
+On the other hand, each API of the core modules are supposed to be stable seams that are not meant to be extended.

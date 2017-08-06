@@ -1,0 +1,88 @@
+Written by: DoubleX
+Written on: GMT 1000 30 Dec 2016
+Version: v1.0
+
+===================================================================================================================
+
+Description
+
+An Abstract Chess plugin that adds a timer for both sides to the project
+The timer shows the available time for its side
+
+===================================================================================================================
+
+Features
+
+1. You can configure the starting counter for both sides individually
+2. You can resume and stop the timer of a specified side on the fly respectively
+3. You can set and substract the timer of a specified side to and by the specified milliseconds on the fly
+   respectively
+4. You can activate and deactivate this plugin on the fly
+
+===================================================================================================================
+
+Installation
+
+To install this plugin, simply unzip this rar on the Chess(root) folder.
+Only the unit test module and the docs are optional, all the others are mandatory in order for the plugin to work
+
+===================================================================================================================
+
+License
+
+Same as that of this project
+
+===================================================================================================================
+
+Links
+
+Same as those of this project
+
+===================================================================================================================
+
+Plugin Dependencies
+
+None
+
+===================================================================================================================
+
+Proficiency Requirements
+
+Plugin developers - Same as that of this project
+
+Plugin users - Nothing special
+
+===================================================================================================================
+
+Script Calls
+
+To resume the timer of the specified side, use this script call:
+chess.plugins.abstractChess.timer.api.resumeTimer(side);
+Where side is the specified side
+E.g.: To resume the timer of the Red side in Chinese Chess, use this script call:
+chess.plugins.abstractChess.timer.api.resumeTimer('Red');
+
+To set the timer of the specified side to the specified milliseconds, use this script call:
+chess.plugins.abstractChess.timer.api.setTimer(side, milliseconds);
+Where side and milliseconds are the specified side and milliseconds respectively
+E.g.: To set the timer of the Black side in Chinese Chess to be 4 hours, use this script call:
+chess.plugins.abstractChess.timer.api.resumeTimer('Black', 14400000);
+
+To stop the timer of the specified side, use this script call:
+chess.plugins.abstractChess.timer.api.stopTimer(side);
+Where side is the specified side
+E.g.: To stop the timer of the White side in Chess, use this script call:
+chess.plugins.abstractChess.timer.api.stopTimer('White');
+
+To substract the timer of the specified side by the specified milliseconds, use this script call:
+chess.plugins.abstractChess.timer.api.substractTimer(side, milliseconds);
+Where side is the specified side
+E.g.: To substract the timer of the Black side in Chess by 2 hours, use this script call:
+chess.plugins.abstractChess.timer.api.substractTimer('Black', 7200000);
+
+===================================================================================================================
+
+Unit Test Coverages
+
+Number of functions: 22
+Number of unit tests: 2

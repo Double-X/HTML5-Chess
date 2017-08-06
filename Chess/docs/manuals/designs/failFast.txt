@@ -1,0 +1,42 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+Generally speaking, fail fast should be the main policy for atomic units having no dependencies outside this
+project, and fail safe should be the main policy for atomic units having dependencies outside this project.
+Here are some reasons:
+
+Fail fast for atomic units having no dependencies outside this project
+
+1. Almost all failures in these units must come from this project itself, which should be under total control.
+   Therefore, it's very practical to find all their root causes and fix them all or at least document them all.
+2. In order to find all the root causes, the failures should be as close to the root causes as possible, as it
+   means fewer elements being possible to be root causes, thus reducing the chance of missing real root causes
+   and/or 'finding' fake ones.
+3. Hence, with the aid of the unit test suites, those root causes can be covered and fixed quickly, and the risk of
+   regressions(their chance to appear and the cost of fixing them) can be greatly reduced.
+
+Fail safe for atomic units having dependencies outside this project
+
+1. If they're all well written to just use those dependencies and do nothing else, then almost all failures there
+   should come from those dependencies, which is likely out of control. Therefore, aside from errors in using those
+   dependencies, those failures should actually be expected, and documented and recovered accordingly.
+2. For example, if a plugin connects a computer to another computer, then internet connection is an essential
+   external dependency which can never be guaranteed to always have no failures at all. If that plugin fails to
+   connect a computer to another computer due to internet connection problems, then that plugin should honestly
+   infom this failure to users and give them all the sensible follow-up actions, as the plugin can do very little
+   to those internet connection problems.
+3. Note that, for some plugin developers, it's quite reasonable to regard some dependencies from some other plugins
+   written by some other plugin developers as dependencies outside this project, as sometimes the formers will have
+   no control over the latters, due to some compatibility issues being extremely costly and difficult to solve.
+
+Implications
+
+For atmoic units using the fail fast approach, defensive programming won't be applied, so rather than verifying
+preconditions, postconditions and invariants, the root causes of their violations should be found and fixed
+instead. At most, such violations will only be logged but won't be addressed by being defensive.
+
+For atomic units using the fail safe approach, defensive programming will be applied, with the aid of defaults
+configurable by users, thus giving them some control over the fallback plans in case of known contingencies.

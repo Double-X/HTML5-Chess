@@ -1,0 +1,8 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+1. v1.0 - GMT 1000 27 Jan 2017
+ - 1st version of the core module with its unit test suite completed

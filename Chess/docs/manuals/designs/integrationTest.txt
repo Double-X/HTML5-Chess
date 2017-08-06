@@ -1,0 +1,27 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+Integration test suites are simply game records represented by javascript using selectable.api.toggle(selectableId)
+dom.api.and other public apis, like closing the alert window, outside this project
+It means that an integration test suite just contains a series of valid uses of the aforementioned apis
+To facilitate viewing how an integration test suite runs by humans, a pause should exist between every consecutive
+api calls
+No integration test will ever test at the abstract rather than the concrete level
+It's backed up by at least the following reasons:
+1. Integration test should be a black box test as it specific the behavior on the system level
+2. The HMTL files are supposed to use the aforementioned api call in this project only
+3. As the game can legitimately shows an alert window, it has to be cancelled before the test can continue to run
+4. Using those apis, in addition to the aforementioned pauses, are sufficient to simulate an entire game execution
+5. Users always interact with the concrete layer first while the abstract layer only serves as a common foundation
+
+Unfortunately, as I've yet to found any automated way to close an alert, running an fully automated intergration
+test suite would mean disabling the alert function in the browser to be tested first, meaning that messageLog won't
+be tested by any fully automated integration test suite
+A barely acceptable workaround for a fully autoamted unit test suite to test messageLo as well is to rewrite alert
+to call console.log, but this would only work if selectable were extended to log its call with its argument as well
+
+Another issue is that, while the integration test suites are run in a black-box manner, writing them needs to have
+a solid understanding on how this project manipulates selectables, which are white box affairs

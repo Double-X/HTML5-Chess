@@ -1,0 +1,15 @@
+div.container {
+    width:100%;
+}
+div.left {
+    width:33%;
+    float:left;
+}
+div.center {
+    width:34%;
+    float:left;
+}
+div.right {
+    width:33%;
+    float:left;
+}

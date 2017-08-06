@@ -1,0 +1,15 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+1. Except in cases listed in credits.txt, commercial use's always allowed and crediting me's always optional.
+2. You shall keep all txt files intact.
+3. You shalln't claim that any file, except those explicitly listed in credits.txt, is written by anyone other than
+   DoubleX or my aliases. I always reserve the right to deny you from commenting on, contributing to, and using 
+   any of my projects anymore if you've violated this.
+4. CC BY 4.0, except those listed in credits.txt or conflicting with any of the above, applies to this project, 
+   unless you've my permissions not needing follow so.
+5. I always reserve the right to deny you from commenting on, contributing to, and using this project anymore if 
+   you've violated any of the above.

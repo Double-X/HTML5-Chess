@@ -1,0 +1,29 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+The core modules can be classified into the MVC pattern:
+
+Pure Model -
+1. checkable - The business logic for checking checkables
+2. coordinates - The business logic for accessing dom's coordinates
+3. currentSide - The business logic for accessing the currently movable side
+4. dom - The business logic for accessing doms
+5. movable - The business logic for moving movables
+6. movableRules - The business logic for validating attempted moves
+7. blockable - The business logic for blocking checks for blockables
+8. movableAbilities - The business logic for moving abilities of movables
+
+Pure View -
+1. highlightable - The presentation of highlighting/unhighlighting highlightables
+2. messageLog - The presentation of showing messages
+
+Pure Controller -
+1. selectable - The event listeners for selecting selectables
+
+Model/View hybrid -
+1. space - The business logic for creating space with its associated presentation
+2. promotable - The business logic for promoting a promotable with its associated presentation for the peomoted
+                promotables

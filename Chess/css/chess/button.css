@@ -1,0 +1,23 @@
+button.black {
+    background-color: #777700;
+    border-color: #777700;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+}
+
+button.white {
+    background-color: #777700;
+    border-color: #777700;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+}
+
+button.neutral {
+    background-color: #FFFFFF;
+    border-color: #777700;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+}

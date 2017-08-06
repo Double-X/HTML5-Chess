@@ -1,0 +1,50 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+The procedure of moving a piece's usually as follows:
+1. A location in a chessboard's selected
+2. If the location doesn't have a piece or the piece isn't owned by the currently movable side, simply select the
+   location, otherwise select the piece
+3. Another location in a chessboard's selected
+4. If no piece's previously selected, goes to step 2, otherwise try to move that previously selected piece to the
+   located selected in step 3
+5. If that piece can move to that location, then does so, otherwise state why the movement can't take place
+6. If that movement can take place and that location has a piece on the opposite side, then capture that piece
+7. If that successful movement lead to at least 1 piece checking the opposite general, then state them all
+8. Unselects that piece and change the currently movable side to the opposite side, then goes to step 1
+The whole procedure applies to both Chess and Chinese Chess, possibly with a slight exception for Castling in Chess
+
+===================================================================================================================
+
+As all core modules are to implement behaviors and named by abilities, the aforementioned procedures lead to these:
+1. Selectable - All locations in a chessboard can be selected, thus the functionalities of selecting selectables
+                need to be implemented
+                The same implementation applies to both Chess and Chinese Chess
+2. Highlightable - In order for players to know which selectable's selected, the selected one needs to be
+                   highlighted, meaning that the functionalities of highlighting highlightables need to be
+                   implemented
+                   The same implementation applies to both Chess and Chinese Chess
+3. Movable - Any piece can be moved if it currently exists at least 1 movement conforming to all movement rules, so
+             the functionalieies of moving movables need to be implemented
+             The same implementation applies to both Chess and Chinese Chess
+4. Movable rules - As mentioned, in order for a movable to be able to move, it needs to have at least 1 movement
+                   conforming to all movement rules, so the functionalities of checking those rules need to be
+                   implemented
+                   Chess and Chinese Chess need different implementations due to them having different pieces with
+                   different movement rules
+5. Coordinates - As whether movable rules are conformed largely depends on the coordinates of the current location
+                 and destination of a piece to be moved, the functionalities of accessing the coordinates of a 
+                 location needs to be implemented
+                 The same implementation applies to both Chess and Chinese Chess
+6. Capture - Moving a piece can mean capturing another piece on the opposite side, so the functionalities of
+             capturing a piece need to be implemented
+             The same implementation applies to both Chess and Chinese Chess
+7. Checkable - Moving a piece can lead to checking the opposite general, so the functionalities of checking a
+               checkable needs to be implemented
+               The same implementation applies to both Chess and Chinese Chess
+8. Current Side - As only the current side can move any of its piece and doing so will change the current side to
+                  the opposite side, the functionalities of accessing the current side need to be implemented
+                  The same implementation applies to both Chess and Chinese Chess

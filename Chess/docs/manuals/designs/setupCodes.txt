@@ -1,0 +1,27 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+Some plugins might need to run some codes upon starting the game, and some might need to stop some of the former
+from happeneing. For instance, this might happen when there are compatibility issues.
+
+Besides, my experiments shows that, running setup codes immediately upon loading the plugin owning them will lead
+to a rare bug causing some plugins to fail to read some files that are already loaded.
+
+Therefore, a container's needed to store all the requested setup codes by all plugins.
+The container's a mapping from a plugin name to its list of functions as setup codes.
+To request some setup codes to be run, wrap them up into functions taking no arguments and put those functions into
+the list mapped from the plugin name in the container.
+
+To remove some setup codes from some plugins, simply remove them from the lists mapped by the names of those
+plugins in the container.
+Note that all setup codes of all Abstract Chess pluginsd are run right before running all those of all concrete
+ones.
+It means that:
+1. For a concrete chess plugin to remove some setup codes of some Abstract Chess plugin, it can only be done right
+   upon loading the former plugin.
+2. For the opposite case, it can only be one in some setup codes of those Abstract Chess plugins.
+
+Please check the timer and gameRecord plugins as examples.

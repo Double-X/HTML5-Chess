@@ -1,0 +1,20 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+This's an experimental side project serving as an environment for learning how to use Javascript ES5 to manipulate
+HTML5 DOM with the aid of CSS, AJAX, unit test, integration test and as few third party frameworks as possible.
+
+The goal of this project itself's to become an easy, simple and small framework for implementing Chess and Chinese
+Chess in ways that are extensible, maintainable and performant.
+
+While it's not a serious project due to me only having 1 year of Javascript experience, I'll still try to set the 
+quality bar as high as I still think I can surpass it. The quality bar of contributors will be as low as I and all
+the other involved contributors can still tolerate it.
+
+Anyone's welcome to comment on, contribute to and use this project, as long as the license's not breached.
+
+Credits will be given to all those advertised, contributed to, and used this projects, in ways agreed by all the
+involved stakeholders. Such agreements will be come up on a case-by-case and/or stakeholder-by-stakeholder basis.

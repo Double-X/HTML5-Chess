@@ -1,0 +1,42 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+Audio Files
+
+These files 
+
+===================================================================================================================
+
+CSS Files
+
+These files 
+
+===================================================================================================================
+
+Graphics Files
+
+These files 
+
+===================================================================================================================
+
+HTML Files
+
+These files render the game and stores the initial chessboard data. It dictates how the doms are accessed.
+
+===================================================================================================================
+
+JS Files
+
+These files stores all the functionalities of this project. Some of them are coupled to the HTML files.
+
+===================================================================================================================
+
+JSON Files
+
+These files stores all external configurations like constants, function contents, how data are loaded, saved, 
+used, etc.
+
+===================================================================================================================

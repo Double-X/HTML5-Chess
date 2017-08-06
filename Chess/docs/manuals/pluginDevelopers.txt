@@ -1,0 +1,60 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+Every plugin should consist of the following 6 modules:
+
+Declaration(Mandatory) - Declares the existence of the plugin, its modules, and all the required plugins
+The declaration module's located in plugins/declarations
+
+API(Optional) - Defines the exposed functionality that are supposed to be used by other plugins and as script calls
+Script calls are simply functionalities that can be executed in the browser console
+If some/all of the exposed functionalities are supposed to have any/all of the below intended uses:
+1. Plugin configuration values(e.g.: for configurations that are customizable javascript functions)
+2. Script calls
+Please explicitly states so
+The API module's located in plugins/apis
+
+Configuration(Optional) - Lets users configure the plugin in ways controlled by the plugin itself
+The configuration module's located in plugins/configurations
+
+Implementation(Mandatory) - Implements the plugin functionalities and connect the plugin with the existing js files
+The implementation module's located in plugins/implementations
+
+Unit Test(Optional) - Implements the plugin implementation unit test suite
+The unit test module's located in plugins/unitTests
+
+Compatibility(Optional) - Implements patches for compatibility issues with some other plugins that aren't required
+by the current one
+The compatibility module's located in plugins/compatibilities
+
+For any plugin, the module loading order's the following:
+1. Declaration
+2. API
+3. Configuration
+4. Implementation
+5. Unit Test
+6. Compatibility
+
+Each module should clearly states where the file should be placed, so plugin users can still place them right in 
+case they've messed up with the installation steps
+
+===================================================================================================================
+
+Also, albeit being optional, every plugin should have its own readme file to help users use the plugin
+For instance, it should include a changelog and state which modules must be loaded and which are optional, and
+which plugins are required by this plugin(please state whether they're needed for some or all functionalities)
+Another good example is to instruct users how to stop the unit test module, if any, when it causes too much lag
+Lacking such instructions will likely cause users to assume all modules must be loaded
+The readme file's supposed to be located in folder docs/manuals/.../plugins
+... should be replaced by abstractChess/chess/chineseChess for Abstract Chess/Chess/Chinese Chess plugins
+
+For any plugin including diagrams, you're supposed to store them in a folder named by the plugin name, and place 
+that folder in docs/diagrams/.../plugins
+... should be replaced by abstractChess/chess/chineseChess for Abstract Chess/Chess/Chinese Chess plugins
+
+Finally, every plugin should be zipped it can just be unzipped at the Chess(root) folder to complete its setup
+
+For more info, check the Abstract Chess plugin timer and the Chess/Chinese Chess plugin gameRecord as examples

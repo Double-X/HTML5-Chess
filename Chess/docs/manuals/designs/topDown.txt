@@ -1,0 +1,33 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+When developing a system, there are usually 3 choices:
+1. Top-down only
+2. Bottom-up only
+3. Both top-down and bottom-up(how they exactly mix together is a case specific analysis)
+
+This project uses the 1st approach, mainly because it's an experimental project, and I only had some very vague
+high level ideas on how to write Chess and Chinese Chess, meaning that using the 2nd or 3rd approach will almost
+always lead to excessively unnecessary guessworks, which should be avoid as much as possible, even though they can
+still somehow lead to learning.
+
+Therefore, designing this project usually starts from considering common use cases, followed by rare ones.
+Then a collection of behaviors from those use cases will be the basis of designing all the core modules.
+Next, all the necessary interactions among those behaviors will be identified and then organized and structured.
+After that, core modules will be designed to be responsible to those behaviors.
+Finally, the interactions among those core modules will be acoording to those of the behaviors themselves.
+
+
+In order to increase cohesion, each code module should only be reponsible for exactly 1 behavior.
+In order to decrease coupling, each code module has its own api list, and core modules can only interact with each
+other through those apis. Those apis also serve as seams to be mocked in the core module unit test suites.
+
+Once the core module apis and dependencies are declared, all that's left are each core module's implementation
+details, which can be isolated from all the other core modules. This is where low level elements come into play.
+
+To increase the reusability of those low level elements, they'll be refactored, after they work without nontrivial
+bugs, to be as independent to this project and be able to function on its ownas possible.
+The key rationale behind this is that, an element must first be usable before being reusable.

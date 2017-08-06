@@ -1,0 +1,26 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+|-----------------------------------------------------------------------------------------------------------------|
+|Number|Type                |Name                   |Description                                        |Priority |
+|-----------------------------------------------------------------------------------------------------------------|
+|1     |Bug Fix/Refactoring |Declarations Not Found |Other plugin components can't find the declarations|Highest  |
+|2     |Abstract Plugin     |Movable Locations      |Shows all movable locations of the selected piece  |Very High|
+|3     |Abstract Plugin     |Checkmate Message      |Shows messages for movements leading to checkmate  |Very High|
+|4     |Abstract Plugin     |Last Move              |Shows the last movement for both sides             |Very High|
+|5     |Abstract Plugin     |UI Sounds              |Plays audios for selecting/unselecting/moving/etc  |Very High|
+|6     |Abstract Plugin     |Computer AI            |Lets users play against various computer AI levels |High     |
+|7     |Chess Plugin        |Computer AI            |Lets users play against various computer AI levels |High     |
+|8     |Chinese Chess Plugin|Computer AI            |Lets users play against various computer AI levels |High     |
+|9     |Abstract Plugin     |Redo/Undo              |Lets users redo and/or undo the past movements     |Medium   |
+|10    |Abstract Plugin     |Chessboard Editor      |Lets users place pieces on valid chessboard places |Medium   |
+|11    |Chess Plugin        |Chessboard Editor      |Lets users place pieces on valid chessboard places |Medium   |
+|12    |Chinese Chess Plugin|Chessboard Editor      |Lets users place pieces on valid chessboard places |Medium   |
+|13    |Abstract Plugin     |Save/Load              |Lets users load and save a game and/or edited board|Low      |
+|14    |Abstract Plugin     |Statistics             |Lets users edit,load and/or save game statistics   |Very Low |
+|15    |Abstract Plugin     |Animated Movements     |Moves a piece smoothly instead of instantaneously  |Very Low |
+|16    |Abstract Plugin     |Online Multiplayer     |Lets users play with each other via the internet   |Lowest   |
+|-----------------------------------------------------------------------------------------------------------------|

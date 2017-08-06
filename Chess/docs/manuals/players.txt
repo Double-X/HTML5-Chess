@@ -1,0 +1,16 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+To play Chess, simply use a HTML5 compatible browser to open Chess.html
+To play Chinese Chess, simply use a HTML5 compatible browser to open Chinese Chess.html
+
+There's a rather rare bug(1 out of 10 on average) that will cause some plugins to at least partially malfunction.
+To check whether this happens, please always open the console when playing to see if there are error messages.
+If this does happen, please refresh until the error's gone. Refreshing once should be enough in most cases.
+
+While I've pinpointed the apparent cause of the bug(some of the plugin components can't see the declaration even
+after the latter's loaded), I've yet to found its root cause nor how to fix the bug without knowing the root cause.
+I'll continue to try until the issue's fixed. I sincerely apologize for any inconvenience caused.

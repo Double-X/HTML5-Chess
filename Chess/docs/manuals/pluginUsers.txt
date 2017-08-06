@@ -1,0 +1,28 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+Every plugin consists of the following 2 modules that are supposed to be used by users:
+
+API(Optional) - If it exists, it might let users to use some/all of the exposed functionalities as script calls
+To use a script call, simply type it in the browser console, if any, and executes it
+Sometimes some APIs can also be used in plugin configuration values(e.g.: for customizable javascript functions)
+The API module's located in plugins/apis
+
+Configuration(Optional) - If it exists, it lets users configure the plugin in ways controlled by the plugin itself
+The configuration module's located in plugins/configurations
+
+===================================================================================================================
+
+To load an Abstract Chess/Chess/Chinese Chess plugin, open plugins.js in folder abstractChess/chess/chineseChess
+DON'T TOUCH plugins.js in FOLDER plugins UNLESS YOU REALLY KNOW WHAT YOU'RE TRULY DOING!
+For any plugin, its declaration and implementation modules must be loaded in order for that plugin to work.
+If that plugin has instructions on which of the remainings are optional/mandatory, then just follow them.
+If there's no such instructions, then simply load all modules.
+If a plugin has instructions on which plugins are required, please follow so.
+Also, please note that if a plugin requires some other ones, then the former should be loaded after loading the
+latters. This's done by placing the former below all the latters in the aforementioned plugins.js to be touched.
+DON'T TOUCH ANY OTHER PARTS OF THAT plugins.js FILE UNLESS YOU REALLY KNOW WHAT YOU'RE TRULY DOING!
+DON'T TOUCH ANY OTHER js FILES UNLESS YOU REALLY KNOW WHAT YOU'RE TRULY DOING!

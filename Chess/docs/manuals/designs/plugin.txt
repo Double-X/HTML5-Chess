@@ -1,0 +1,63 @@
+Written by: DoubleX
+Written on: GMT 1000 27 Jan 2017
+Version: v1.0
+
+===================================================================================================================
+
+Each plugin's supposed to have the following modules which are loaded in the following order:
+1. Delcaration
+2. API
+3. Configuration
+4. Implementation
+5. Unit test
+6. Compatibility
+
+===================================================================================================================
+
+The reasons behind such a setup are the following:
+
+1. Declaration - With it, it's clear for both the plugin users and the follow plugin developers which modules the
+                 plugin has and which other plugin the current one needs
+                 This module must be loaded first because it declares the existence of all the other modules
+                 All declaration modules from all plugins will be loaded before loading any other module from any
+                 other plugin because sometimes it makes sense for some other modules to depend on some other
+                 plugins, which can only be found after their declaration modules are loaded
+                 This also conforms to failing fast, as any missing plugin dependency will be known as quickly as
+                 possible
+
+2. API - With it, it's clear for both the plugin users where the script calls/plugin configuration elements are and
+         how they can be used
+         For the fellow plugin developers, it also lets them know what the exposed plugin functionalities(which are
+         supposed to be stable seams) are and how to use them, thus saving them time from reading the
+         implementations and protecting them for their changes, which are normal to be quite frequent
+         All API modules from all plugins will be loaded before loading any configuration module from any other
+         plugin because sometimes some of the latters can use some of the formers
+
+3. Configuration - With it, it's clear for both the plugin users and the fellow plugin developers where and how the
+                   plugin can be configured and used
+                   Separating the configuration from all the other modules also reduces the chance for plugin users
+                   to change any part that's not supposed to be change by them, thus increasing user-friendiness
+                   and making handling plugin user support issues easier, simpler and smaller
+                   
+4. Implementation - With it, it's clear for the fellow plugin developers how the plugin works, and how to extend
+                    the implementation when needed. All changes to the plugin implementations, which are expected
+                    to be quite frequent, will be localized in this module
+                    It shouldn't use any configuration of any plugin upon being loaded, as some abstract plugins
+                    can have different configurations for Chess and Chinese Chess, making them concrete ones
+
+5. Unit test - With it, it's clear for both the original and fellow plugin developers the root causes of bugs and
+               possibly compatibility issues
+               Note that some tests in the unit test suite might be actually functional tests
+
+6. Compatibility - With it, it's clear for the fellow plugin developers which plugins have what compatibility
+                   issues with the current one and how they're addressed
+                   Therefore it's likely that changes on the implementation and compatibility modules won't affect
+                   each other much, or even at all
+                   Any compatibility module's loaded after loading all implementation modules because from my 
+                   experience, knowledge and observation, it's quite rare to need to have compatibility modules
+                   between some/all of the invovled plugins
+                   For almost all other cases, just placing compatibility fixes after all plugin implementations
+                   will suffice, thus not needing plugin users to manage a colossal, complicated and convoluted 
+                   list of plugin modules 
+                   If, unfortunately, that becoems the case, then plugin developers will be forced to write those
+                   parts of the compatibility fixes in the implementation module
